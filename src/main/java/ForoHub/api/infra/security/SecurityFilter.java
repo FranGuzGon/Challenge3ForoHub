@@ -11,7 +11,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
 
 @Component
@@ -39,7 +38,6 @@ public class SecurityFilter extends OncePerRequestFilter {
             var token = authHeader.replace("Bearer ", "");
             System.out.println(token);
 
-            //Hasta acá estamos llegando
             System.out.println(tokenService.getSubject(token)); //¿Este usuario tiene sesión?
 
             var subject = tokenService.getSubject(token);
